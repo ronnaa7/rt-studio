@@ -1,28 +1,3 @@
-!DOCTYPE html>
-<html lang="he" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>R.T Studio - אפליקציית כושר חכמה</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
-
-src/main.jsx
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
-
-src/App.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
@@ -31,16 +6,15 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import { Home, ClipboardList, LineChart, User, Flame, Plus, Save, Video, BrainCircuit, UtensilsCrossed, X, Award, Trophy, ShieldCheck, Weight, Sparkles, Bot, Palette, Zap, ThumbsUp, ThumbsDown, Clock3, ShoppingCart, Copy, Sailboat } from 'lucide-react';
 
 // --- Firebase Configuration ---
-// This now uses environment variables, which is safer for deployment.
-// You will need to set these in your Netlify deployment settings.
+// Using the specific config provided by the user to simplify setup.
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
-  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_APP_ID,
-  measurementId: import.meta.env.VITE_MEASUREMENT_ID
+  apiKey: "AIzaSyD6H31387y3cjr5WqjDXlPvzE97hxxvVWc",
+  authDomain: "re-studio.firebaseapp.com",
+  projectId: "re-studio",
+  storageBucket: "re-studio.firebasestorage.app",
+  messagingSenderId: "964931523746",
+  appId: "1:964931523746:web:4c844e2a62fd95d3a2b3fb",
+  measurementId: "G-2T4SGBVGD9"
 };
 const appId = firebaseConfig.appId;
 
